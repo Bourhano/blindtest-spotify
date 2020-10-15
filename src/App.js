@@ -6,6 +6,7 @@ import loading from './loading.svg';
 import './App.css';
 import Sound from 'react-sound';
 import Button from './Button';
+import { useEffect, useState } from "react";
 
 const apiToken = '<<Copiez le token de Spotify ici>>';
 
@@ -29,6 +30,12 @@ function getRandomNumber(x) {
 }
 
 const App = () => {
+  const [text, setText] = useState('');
+  
+  useEffect(() => {
+    setText("?text!");
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
@@ -36,7 +43,7 @@ const App = () => {
         <h1 className="App-title">Bienvenue sur le Blindtest</h1>
       </header>
       <div className="App-images">
-        <p>Il va falloir modifier le code pour faire un vrai Blindtest !</p>
+        <p>{text}</p>
       </div>
       <div className="App-buttons">
       </div>
